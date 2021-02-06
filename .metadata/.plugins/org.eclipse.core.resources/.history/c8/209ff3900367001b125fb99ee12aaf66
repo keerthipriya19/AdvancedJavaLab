@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class Arraylist {
+
+	public  static void main(String args[]) {
+	ArrayList<String> obj = new ArrayList<String>();
+	obj.add("keerthi");
+	obj.add("jessy");
+	obj.add("mouni");
+	obj.add("chandu");
+	obj.add("suppi");
+	System.out.println("Th elements of arrylist are :"+obj);
+	obj.add(0, "Raji");
+	obj.add(1, "Justin");
+	obj.remove("chandu");
+	obj.remove("suppi");
+	System.out.println("Current array list is:"+obj);
+	obj.remove(1);
+	System.out.println("Current array list is:"+obj);
+	}
+
+
+
+
+}

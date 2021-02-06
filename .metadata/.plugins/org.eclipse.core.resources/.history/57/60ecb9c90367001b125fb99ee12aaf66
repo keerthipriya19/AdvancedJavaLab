@@ -1,0 +1,17 @@
+import java.util.Hashtable;
+import java.util.Map;
+
+public class HashTable {
+	public static void main(String args[]){
+		Hashtable<Integer,String> hm=new Hashtable<Integer,String>();
+		hm.put(100,"Ankitha");
+		hm.put(102,"Raki");
+		hm.put(101,"Vijaya");
+		hm.put(103,"Rahul");
+		for(Map.Entry m:hm.entrySet()){
+		System.out.println(m.getKey()+" "+m.getValue());
+		}
+		}
+		}
+
+

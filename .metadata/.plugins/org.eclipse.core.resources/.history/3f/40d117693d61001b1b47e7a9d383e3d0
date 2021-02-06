@@ -1,0 +1,85 @@
+package servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class Cartbill
+ */
+@WebServlet("/Cartbill")
+public class Cartbill extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Cartbill() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		int to=0;
+		HttpSession session=request.getSession(true);
+		
+		Enumeration names=session.getAttributeNames();
+		while(names.hasMoreElements()) {
+		String name=names.nextElement().toString();
+		
+		}
+		
+		 String pencilcmt="";
+		 String bookcmt="";
+		 String laptopcmt="";
+		 String mobilecmt="";
+		 
+		 if(session.getAttribute("pencilcmt")!=null) {
+		 
+		 pencilcmt=session.getAttribute("pencilcmt").toString();
+		 }
+		 if(session.getAttribute("bookcmt")!=null) {
+			 
+		 
+		 bookcmt=session.getAttribute("bookcmt").toString();
+		 }
+		 if(session.getAttribute("laptopcmt")!=null) {
+			 
+		laptopcmt=session.getAttribute("laptopcmt").toString();
+		 }
+		 if(session.getAttribute("mobilecmt")!=null) {
+			 
+		 mobilecmt=session.getAttribute("mobilecmt").toString();
+		 }
+		out.println("<table><tr>");
+		out.println("<td>pencil:<td>"+pencilcmt);
+		out.println("<tr><td>book:<td>"+bookcmt);
+		out.println("<tr><td>laptop:<td>"+laptopcmt);
+		out.println("<tr><td>mobile:<td>"+mobilecmt);
+		out.println("</table>");
+		session.invalidate();
+		
+	}
+
+}

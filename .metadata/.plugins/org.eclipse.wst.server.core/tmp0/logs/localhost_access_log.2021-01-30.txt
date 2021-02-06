@@ -1,0 +1,5 @@
+127.0.0.1 - - [30/Jan/2021:10:46:42 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [30/Jan/2021:10:46:44 +0530] "GET /Secondservle/Website HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [30/Jan/2021:10:46:59 +0530] "GET /Secondservle/website.html HTTP/1.1" 200 616
+0:0:0:0:0:0:0:1 - - [30/Jan/2021:10:47:05 +0530] "POST /Secondservle/Website HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [30/Jan/2021:10:47:20 +0530] "POST /Secondservle/Website HTTP/1.1" 302 -

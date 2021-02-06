@@ -1,0 +1,98 @@
+package servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class Shopservlet
+ */
+@WebServlet("/Shopservlet")
+public class Shopservlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Shopservlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		String pencilcost=request.getParameter("pencilcost");
+		String bookcost=request.getParameter("bookcost");
+		String laptopcost=request.getParameter("laptopcost");
+		String mobilecost=request.getParameter("mobilecost");
+		
+		String pencil=request.getParameter("pencil");
+		String book=request.getParameter("book");
+		String laptop=request.getParameter("laptop");
+		String mobile=request.getParameter("mobile");
+		
+		int pencilcmt=0,bookcmt=0,mobilecmt=0,laptopcmt=0;
+		HttpSession session=request.getSession(true);
+		
+		if(pencil!=null &&! pencil.equals("")) {
+			pencilcmt=Integer.parseInt(pencilcost)*Integer.parseInt(pencil);
+			if(session.getAttribute("pencilcmt")!=null) {
+				pencilcmt=pencilcmt+Integer.parseInt(session.getAttribute("pencilcmt").toString());
+		
+		}
+			session.setAttribute("pencilcmt",pencilcmt+"");
+		}
+	else if(book!=null &&! book.equals("")) 
+	{
+		bookcmt=Integer.parseInt(bookcost)*Integer.parseInt(book);
+		if(session.getAttribute("bookcmt")!=null) {
+			bookcmt=bookcmt+Integer.parseInt(session.getAttribute("bookcmt").toString());
+	       
+	}
+		session.setAttribute("bookcmt",bookcmt+"");
+		
+	}
+		else if(laptop!=null &&!laptop.equals(""))
+		{
+			laptopcmt=Integer.parseInt(laptopcost)*Integer.parseInt(laptop);
+			if(session.getAttribute("laptopcmt")!=null) {
+				laptopcmt=laptopcmt+Integer.parseInt(session.getAttribute("laptopcmt").toString());
+		       
+		}
+			session.setAttribute("laptopcmt",laptopcmt+"");
+		}
+		if(mobile!=null &&! mobile.equals(""))
+		{
+			mobilecmt=Integer.parseInt(mobilecost)*Integer.parseInt(mobile);
+			if(session.getAttribute("(mobilecmt")!=null) {
+				mobilecmt=mobilecmt+Integer.parseInt(session.getAttribute("mobilecmt").toString());
+		       
+		}
+			session.setAttribute("mobilecmt",mobilecmt+"");
+		}
+			
+		response.sendRedirect("./Add.html");
+		
+			
+	}
+
+}

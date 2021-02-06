@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;data.csv&apos; to &apos;secondmethod&apos;&#x0D;&#x0A;- Original project: &apos;EMP&apos;&#x0D;&#x0A;- Destination element: &apos;secondmethod&apos;&#x0D;&#x0A;- Original element: &apos;data.csv&apos;" description="Copy file" destination="=secondmethod" element1="data.csv" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1598172460996" units="0" version="1.0"/>
+</session>
